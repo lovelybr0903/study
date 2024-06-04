@@ -1,0 +1,32 @@
+ul {
+  list-style: none;
+}
+li {
+  width: 120px;
+  display: inline-block;
+  margin: 10px;
+}
+li a {
+  padding: 5px 20px;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a[href] {
+  background-color: aquamarine;
+  border: 3px dashed rgb(78, 78, 247);
+  font-weight: normal;
+}
+a[target] {
+  background-color: rgb(238, 244, 64);
+  padding: 10px;
+}
+
+/* 차일드 선택자 */
+
+section > p {
+  color: red;
+}
+
+

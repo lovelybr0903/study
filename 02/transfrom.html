@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tranform: translate/scale/rotate/perspective/3D</title>
+    <style>
+      #container {
+        width: 800px;
+        height: 200px;
+        margin: 10px auto;
+      }
+      .origin {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000;
+        float: left;
+        margin: 10px;
+      }
+      .origin > div {
+        background-color: rgb(68, 150, 109);
+        width: 100%;
+        height: 100px;
+      }
+      #movex:hover {
+        /* x축(가로)으로 20px 이동 */
+        transform: translatex(20px);
+        background-color: rgb(114, 118, 244);
+        transition: 0.5s;
+      }
+      #movey:hover {
+        transform: translateY(30px);
+        background-color: rgb(251, 255, 0);
+        transition: 0.1s;
+      }
+
+      #movexy:hover {
+        transform: translate(20px, -20px);
+        background-color: aqua;
+        transition: 0.5s;
+      }
+      /* 스케일 스케일 스케일 스케일 스케일 스케일*/
+      .origin1 {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #8b8989;
+        float: left;
+        margin: 10px;
+      }
+      .origin1 > div {
+        background-color: rgb(150, 246, 138);
+        width: 100%;
+        height: 100px;
+      }
+      .scalex:hover {
+        transform: scalex(150%);
+        background-color: rgb(251, 255, 0);
+        transition: 0.8s;
+      }
+
+      .scaley:hover {
+        transform: scaley(1.5);
+        background-color: rgb(242, 155, 206);
+        transition: 0.3s;
+      }
+      .scalexy:hover {
+        transform: scale(-0.7);
+        background-color: rgb(116, 173, 249);
+      }
+      /* 로테이트 로테이트 로테이트 로테이트 로테이트 */
+      #container {
+        width: 800px;
+        margin: 10px auto;
+      }
+      .origin2 {
+        width: 100px;
+        height: 100px;
+        float: left;
+        margin: 40px;
+      }
+      .origin2 img {
+        width: 100px;
+        height: 100px;
+      }
+      #rotate1:hover {
+        transform: rotate(45deg);
+      }
+      #rotate2:hover {
+        transform: rotate(-45deg);
+      }
+      /* 퍼스펙티브 퍼스펙티브 퍼스펙티브 퍼스펙티브 */
+      .origin3 {
+        width: 150px;
+        margin: 10px;
+        float: left;
+      }
+      .origin3 img {
+        width: 100%;
+      }
+      .rotatex:hover {
+        transform: rotateX(50deg);
+      }
+      #pers {
+        perspective: 300px;
+      }
+      /* 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D */
+      #container4 {
+        width: 800px;
+        margin: 10px auto;
+      }
+      .origin4 {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        float: left;
+        border: 1px solid #8b8989;
+        perspective: 200px;
+      }
+      .origin4 > div {
+        width: 100%;
+        height: 100%;
+        background-color: cadetblue;
+        transition: all 1s;
+      }
+      #rotatex4:hover {
+        transform: rotateX(55deg);
+      }
+      #rotatey4:hover {
+        transform: rotatey(30deg);
+      }
+      #rotatez4:hover {
+        transform: rotatez(85deg);
+      }
+      #rotatexyz4:hover {
+        transform: rotate3d(2, -2, 2, 180deg);
+      }
+      /* 배경 모양 트랜지션 배경 모양 트랜지션 배경 모양 트랜지션 */
+      .bg-tr {
+        width: 100px;
+        height: 100px;
+        float: left;
+        margin: 10px;
+        border: 1px solid #5d5c5c;
+        background-color: #b241e7;
+        transition: all ease 0.5s;
+      }
+      .bg-tr:hover {
+        background-color: rgb(179, 232, 249);
+      }
+      .border-tr {
+        width: 100px;
+        height: 100px;
+        float: left;
+        margin: 10px;
+        border: 1px solid #5d5c5c;
+        background-color: #e8e246;
+        transition: all linear 0.5s;
+      }
+
+      .border-tr:hover {
+        border: 3px solid red;
+        border-radius: 50%;
+      }
+
+      /* 타이밍 펑션 fnc 타이밍 펑션 fnc 타이밍 펑션 fnc */
+      #wrap div {
+        width: 100px;
+        height: 50px;
+        margin: 5px 10px;
+        padding: 5px;
+        color: rgb(11, 11, 11);
+        background-color: #f3caca;
+        border-radius: 4px;
+        text-align: center;
+        font-weight: bold;
+        float: left;
+      }
+      #wrap:hover div {
+        height: 300px;
+      }
+      #wrap .ease {
+        transition: ease 3s;
+      }
+      #wrap .linear {
+        transition: linear 3s;
+      }
+      #wrap .ease-in {
+        transition: ease-in 3s;
+      }
+      #wrap .ease-out {
+        transition: ease-out 3s;
+      }
+      #wrap .ease-in-out {
+        transition: ease-in-out 3s;
+      }
+    </style>
+  </head>
+  <!-- 바디 시작 바디 시작 바디 시작 바디 시작 바디 시작 바디 시작 바디 시작 -->
+
+  <!-- #하고 이름쓰면 디브에 아이디 생김 -->
+  <!-- .하고 이름쓰면 디브에 클래스 생김 -->
+  <!-- 이름*4 하면 4개 생김 -->
+  <body>
+    <div id="container">
+      <div class="origin">
+        <div id="movex">무브</div>
+      </div>
+      <div class="origin">
+        <div id="movey"></div>
+      </div>
+      <div class="origin">
+        <div id="movexy"></div>
+      </div>
+    </div>
+    <!-- 스케일 스케일 스케일 스케일 스케일  스케일 스케일 -->
+    <div id="container">
+      <div class="origin1">
+        <div class="scalex">스케일</div>
+      </div>
+      <div class="origin1">
+        <div class="scaley"></div>
+      </div>
+      <div class="origin1">
+        <div class="scalexy"></div>
+      </div>
+    </div>
+    <!-- 로테이트 로테이트 로테이트 로테이트 로테이트 로테이트-->
+    <div id="container">
+      <div class="origin2" id="rotate1">
+        <img src="/imges/homeicon.png" alt="icon" /> 로테이트
+      </div>
+      <div class="origin2" id="rotate2">
+        <img src="/imges/homeicon.png" alt="icon" />
+      </div>
+    </div>
+    <!-- 퍼스펙티브:입체 z축 퍼스펙티브:입체 z축 퍼스펙티브 -->
+    <div class="origin3">
+      <div class="rotatex">
+        <img src="/imges/네티.jpg" alt="img" />퍼스펙티브
+      </div>
+    </div>
+    <div class="origin3" id="pers">
+      <div class="rotatex">
+        <img src="/imges/네티.jpg" alt="img" />
+      </div>
+    </div>
+    <!-- 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D -->
+    <div id="container4">
+      <div class="origin4">
+        <div id="rotatex4">3D</div>
+      </div>
+      <div class="origin4">
+        <div id="rotatey4"></div>
+      </div>
+      <div class="origin4">
+        <div id="rotatez4"></div>
+      </div>
+      <div class="origin4">
+        <div id="rotatexyz4"></div>
+      </div>
+    </div>
+    <!-- 배경 모양 트랜지션 배경 모양 트랜지션 배경 모양 트랜지션 -->
+    <div class="bg-tr">트랜지션</div>
+    <div class="border-tr">트랜지션</div>
+    <!-- 타이밍 펑션 fnc 타이밍 펑션 fnc 타이밍 펑션 fnc 타이밍 펑션 fnc-->
+    <div id="wrap">
+      <div class="ease">ease</div>
+      <div class="linear">linear</div>
+      <div class="ease-in">ease-in</div>
+      <div class="ease-out">ease-out</div>
+      <div class="ease-in-out">ease-in-out</div>
+    </div>
+  </body>
+</html>

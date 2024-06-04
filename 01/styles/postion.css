@@ -1,0 +1,54 @@
+p {
+  width: 300px;
+  height: 500px;
+  background-color: aquamarine;
+  border: 1px solid green;
+  line-height: 2;
+}
+
+.static {
+  /* 문서의 흐름에 맞춰 배치, 기본값 */
+  position: fixed;
+  z-index: 1;
+}
+
+.relative-1 {
+  /* 위치 값을 지정할 수 있다. 그 외 스태틱과 동일 */
+  position: relative;
+}
+
+.relative-2 {
+  position: absolute;
+  top: -50px;
+  left: 100px;
+}
+
+.fixed {
+  position: relative;
+  height: 100px;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background-color: blue;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contents {
+  position: relative;
+  background: url("/imges/네티.jpg") center no-repeat;
+  background-size: cover;
+  width: 800px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 120px;
+  text-shadow: 2px 2px 0 red;
+  color: blueviolet;
+}

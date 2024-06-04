@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>도큐먼트 오브젝트 모델</title>
+    <style>
+      #wrap {
+        position: relative;
+        width: 500px;
+        padding: 20px 20px;
+        margin: 0 auto;
+      }
+      button {
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 1px solid #ccc;
+        font-size: 14px;
+        padding: 5px;
+      }
+      .over {
+        position: absolute;
+        left: 40px;
+        top: 270px;
+      }
+      .detail {
+        width: 500px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <!-- <img src="img/f1.jpg" alt="이미지" /> -->
+      <button class="over" id="open">설명보기</button>
+      <div class="detail" id="desc">
+        <h4>등심붓꽃</h4>
+        <p>
+          가지목 메꽃과의 한해살이풀 또는 여러해살이풀로서, 주변의 물체에
+          지지하여 자라는 덩굴식물이다. 기원지는 중앙아메리카다. 영어로 Morning
+          Glory라고도 하는데, 엄밀히 말하면 모닝글로리는 메꽃과에 속하는 1천여
+          종의 꽃들을 전부 다 가리키기 때문에, 나팔꽃을 모닝글로리라고 말하는
+          것은 맞으나, 모든 모닝글로리가 나팔꽃인 것은 아니다.
+        </p>
+        <button id="close">설명닫기</button>
+      </div>
+    </div>
+    <script>
+      document.querySelector("#open").onclick = function show() {
+        document.querySelector("#desc").style.display = "block";
+        document.querySelector("#open").style.display = "none";
+      };
+      document.querySelector("#close").onclick = function hide() {
+        document.querySelector("#desc").style.display = "none";
+        document.querySelector("#open").style.display = "block";
+      };
+    </script>
+  </body>
+</html>

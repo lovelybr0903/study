@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array() -배열</title>
+  </head>
+  <body>
+    <script>
+      const season = ["봄", "여름", "가을", "겨울"];
+      for (
+        let i = 0;
+        i < 4;
+        i++ // for문 (초기값, 조건, 증가)
+      ) {
+        document.write(season[i]);
+      }
+      const num = ["일", "이", "삼", "사", "오", "육", "칠", "팔"];
+      const num1 = ["구", "십", "십일"];
+      const num2 = num.concat(num1);
+      document.write(`${num2}`);
+      for (
+        let i = 0;
+        i < num.length;
+        // 넘에 있는 길이보다 / 넘에 있는 모든 것을 포함
+        i++ // 포 (초기값, 조건, 증가)
+      ) {
+        document.write(num[i]);
+      }
+    </script>
+  </body>
+</html>

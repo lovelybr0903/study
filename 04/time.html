@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date()</title>
+    <!-- 샘플의 복사본 인스턴스 / 앞에 new-->
+  </head>
+  <body>
+    <script>
+      const now = new Date();
+      // 데이트는 샘플/ 샘플을 사용하여면 복사본 new 붙여야함/뉴 데이트는 객체의복사본
+      // 나우라는 객체(프로퍼티-키와값의 쌍(속성)-와메서드-함수(기능))가 있는거임
+      document.write("현재 시각은 " + now);
+      document.write(`현재 시각은 ${now}`);
+      const now1 = now.toLocaleDateString();
+      document.write(`현재 시각은 ${now1}`);
+    </script>
+  </body>
+</html>

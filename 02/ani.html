@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+    <style>
+      #wrap {
+        width: 500px;
+        margin: 20px auto;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        float: left;
+      }
+      #box1 {
+        background-color: rgb(65, 149, 35);
+        border: 1px solid transparent;
+        /* 트랜스퍼런스- 처음에는 투명하게 */
+        animation-name: shape;
+        animation-duration: 2s;
+        animation-iteration-count: 3; /* 3번반복 */
+        animation-direction: reverse;
+        /* 안 적으면 프럼에서 투인데 리버스는 투에서 프롬 */
+      }
+      #box2 {
+        background-color: rgb(194, 55, 55);
+        border: 1px dotted transparent;
+        animation-name: rotate;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        /* 알터네이트 자연스럽게 반복 -리버스도 있음*/
+      }
+      #box3 {
+        background-color: red;
+        /* animation: rotate3d 2s infinite ease-in,
+          background 2s infinite alternate ease-in-out; */
+      }
+      #box3:hover {
+        background-color: red;
+        animation: rotate3d 2s infinite ease-in,
+          background 2s infinite alternate ease-in-out;
+      }
+      /* 애니메이션이 바뀌는 시점-키프레임 */
+      /* 키프레임은 박스제어만 하기 때문에 횟수설정은 원래 박스에 */
+      @keyframes shape {
+        from {
+          border: 1px solid transparent;
+        }
+        to {
+          border: 1px solid red;
+          border-radius: 50%;
+        }
+      }
+      @keyframes rotate {
+        from {
+          transform: rotate(50deg);
+          border: 1px solid #000;
+        }
+        to {
+          border-radius: 50%;
+        }
+      }
+      @keyframes rotate3d {
+        form {
+          transform: perspective(150px) rotateX(0deg) rotateY(0deg);
+        }
+        50% {
+          transform: perspective(150px) rotateX(-180deg) rotateY(0deg);
+        }
+        to {
+          transform: perspective(150px) rotateX(-180deg) rotateY(-180deg);
+        }
+      }
+      @keyframes background {
+        from {
+          background-color: aqua;
+        }
+        50% {
+          background-color: rgb(130, 105, 211);
+        }
+        to {
+          background-color: rgb(254, 250, 4);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="box" id="box1"></div>
+      <div class="box" id="box2"></div>
+      <div class="box" id="box3"></div>
+    </div>
+  </body>
+</html>

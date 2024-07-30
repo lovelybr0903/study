@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구조 가상클래스(요소)</title>
+    <style>
+.contents { width: 300px;}
+.contents :nth-child(2n) {background-color: rgb(244, 129, 129);}
+/* 괄호 안 숫자 뒤 n 적으면 짝수, n+1 적으면 홀수 */
+
+li.hot::after{content: "hot";
+font-size: 10px;
+padding: 2px 4px;
+margin: 0 10px;
+border-radius: 4px;
+background-color: red;
+color: #fff;}
+
+.icon::before{content: "";
+/* 이미지를 넣을 때도 컨텐트 꼭 명시 */
+background: url(/imges/homeicon.png) center no-repeat;
+background-size: contain;
+position: absolute;
+left: 100px;
+width: 14px;
+height: 14px;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="contents">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, impedit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, impedit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, impedit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, impedit.</p>
+    </div>
+    <div class="container">
+        <h1>제품 목록</h1>
+        <ul>
+            <li class="hot">제품1</li>
+            <li>제품2</li>
+            <li class="icon">제품3</li>
+            <li>제품4</li>
+        </ul>
+    </div>
+    </p>
+  </body>
+</html>

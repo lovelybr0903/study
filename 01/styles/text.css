@@ -1,0 +1,73 @@
+/* 코딩컨벤션 제이슨파일에서 순서 자동정렬 태그 입력하고 설정에서 단축키설정 */
+
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  outline-style: none;
+}
+
+body {
+  font-size: 10px;
+  word-break: break-all;
+}
+/* 워드브레이크 창이 줄어드면 글자를 어떻게 보여줄지 */
+
+h1 {
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  color: #000;
+}
+.p1 {
+  /* 1.25나 1.75 */
+  font-size: 1.6rem;
+  line-height: 1.25;
+  color: cornflowerblue;
+  letter-spacing: 30px;
+  /* 자간은 느낌 보통 -0.23px */
+}
+.p2 {
+  /* 1.25나 1.75 */
+  font-size: 1.6rem;
+  line-height: 1.25;
+  color: rgb(19, 162, 112);
+  letter-spacing: 0.23px;
+  /* white-space: nowrap; 화면이 줄어들면 한 줄만 보여줌 */
+  overflow: hidden;
+  text-overflow: ellipsis; /* ... 으로 보여준다*/
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5; /* 5줄만 보여주고 ... 으로 보여준다 */
+}
+
+/* 한줄 짜리 말줄임 
+white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; */
+
+/* 원하는 줄 만큼 보여주고 말줄임 
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis; 
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 5; */
+
+span {
+  font-size: 4rem;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+ul,
+li {
+  font-size: 2rem;
+  list-style: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}

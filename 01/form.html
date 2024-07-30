@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>폼 양식</title>
+  </head>
+  <body>
+    <!-- 오토컴플릿하면 네모창 밑에 글자들이 안 나옴 -->
+    <form autocomplete="off" onsubmit="handleSubmit(event)">
+      <fieldset>
+        <legend>상품 선택</legend>
+        <label for="name">상품 이름</label>
+        <!-- label for에 "이름"적고 인풋타입 아이디에 "이름"적으면 글자를 눌러도 네모박스에 커서자동으로 감 -->
+        <input
+          type="text"
+          id="name"
+          placeholder="상품 이름을 입력하세요."
+          autofocus
+        />
+        <!-- 오토포커스 쓰면 자동으로 커서가 깜빡임 -->
+        <br />
+
+        <label for="uid">아이디</label>
+        <input
+          type="text"
+          id="uid"
+          placeholder="아이디를 입력하세요."
+          readonly
+        />
+        <!-- 리드온리 읽기 전용 -->
+        <br />
+
+        <label for="upw">비밀번호</label>
+        <input type="password" id="upw" placeholder="비밀번호를 입려하세요." />
+        <br />
+
+        <label for="num">숫자</label>
+        <input type="number" id="num" />
+        <br />
+
+        <input type="file" />
+        <!-- 폼 안에 인풋타입 버튼은 새로고침됨/ 싫으면 버튼타입을 버튼으로 변경 -->
+        <input type="submit" value="제출하기" />
+        <button type="button" onclick="handleSubmit(event)">
+          제출하기 버튼
+        </button>
+      </fieldset>
+
+      <!-- 라디오 버튼 -->
+      <label for="menu">메뉴1</label>
+      <input type="radio" name="menu" value="menu1" />
+      <label for="menu">메뉴2</label>
+      <input type="radio" name="menu" value="menu2" />
+      <label for="menu">메뉴3</label>
+      <input type="radio" name="menu" value="menu3" />
+      <label for="menu">메뉴4</label>
+      <input type="radio" name="menu" value="menu4" />
+      <br />
+
+      <!-- 체크박스 -->
+      <label for="check1">체크1</label>
+      <input type="checkbox" checked name="check1" />
+      <label for="check2">체크2</label>
+      <input type="checkbox" name="check2" />
+      <label for="check3">체크3</label>
+      <input type="checkbox" name="check3" />
+      <label for="check4">체크4</label>
+      <input type="checkbox" name="check4" />
+
+      <input type="date" /><br />
+
+      <!-- 인풋태그는 무조건 한줄만 됨 -->
+      <!-- 텍스트에어리어 쓰면 가능함 -->
+      <textarea style="resize: none" cols="20" rows="30"></textarea>
+      <!-- 리사이즈 뒤에 논 붙이면 사이즈 변형불가 -->
+    </form>
+
+    <script>
+      function handleSubmit(e) {
+        e.preventDefault();
+        console.log("제출 완료");
+      }
+    </script>
+  </body>
+</html>

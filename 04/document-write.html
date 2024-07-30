@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document-write</title>
+  </head>
+  <body>
+    <h1>안녕하세요</h1>
+    <!-- 내장된 함수 /다큐먼트 프로퍼티(속성) 안에 라이트라는 메서드(함수) -->
+    <script>
+      //   document.write("<h1>안녕하세요</h1>");
+      const name = prompt("이름을 입력하세요");
+      document.write(`<p><big>${name}</big>님, 환영합니다.</p>`);
+      // new -연산자 / 연산자 뒤에 대문자로
+      // Date 앞에 대문자는 생성자함수 - 설명서 같은거임 -새로 만들어야 함
+      // 프로토타입(객체)
+      const now = new Date();
+      //   잘 모르겠으면, 콘솔로 찍어보기
+      //   console.log(now);
+      //   내장 메서드(함수)
+      const display = now.toLocaleTimeString();
+      //   console.log(display);
+      //   ${변수} 문법
+      document.write(`현재 시각은 ${display}`);
+    </script>
+  </body>
+</html>

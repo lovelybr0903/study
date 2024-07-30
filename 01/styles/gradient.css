@@ -1,0 +1,77 @@
+div {
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  border: 1px solid #000;
+  display: inline-block;
+}
+
+.gradient {
+  background: greenyellow;
+  /* 왼쪽 위에서 오른쪽 아래 방향으로 초록에서 흰색으로 */
+  background: linear-gradient(to right bottom, green, #fff);
+}
+
+.gradient1 {
+  background: #fff;
+  background: linear-gradient(360deg, blueviolet, #fff);
+}
+
+.gradient2 {
+  background: linear-gradient(80deg, red, #fff 40%, blue);
+}
+
+.grad1 {
+  background: repeating-linear-gradient(
+    yellow,
+    yellow 20px,
+    black 10px,
+    black 30px
+  );
+}
+
+.grad2 {
+  background: repeating-radial-gradient(circle, blue, #fff 10%, #ccc 20%);
+}
+
+.radial {
+  background: radial-gradient(circle, #fff, yellow, blueviolet);
+}
+
+.div1 {
+  /* 그라데이션 중심에서 가장 가까운 측면에 닿을 때까지 */
+  background: radial-gradient(
+    circle closest-side at 30% 50%,
+    #fff,
+    rgb(217, 255, 0),
+    rgb(49, 156, 223)
+  );
+}
+
+.div2 {
+  background: radial-gradient(
+    /* 가장 가까운 꼭지점에 닿을 때 까지 */ circle closest-corner at 30% 50%,
+    #fff,
+    yellow,
+    rgb(28, 189, 84)
+  );
+}
+
+.div3 {
+  background: radial-gradient(
+    /* 그라 중심에서 가장 멀리 떨어진 측면에 닿을 때 까지 */ circle
+      farthest-side at 30% 40%,
+    #fff,
+    rgb(153, 0, 255),
+    rgb(238, 103, 157)
+  );
+}
+
+.div4 {
+  background: radial-gradient(
+    /*  */ circle farthest-corner at 30% 50%,
+    #fff,
+    rgb(0, 255, 179),
+    rgb(5, 62, 248)
+  );
+}

@@ -1,0 +1,47 @@
+div {
+  display: inline-block;
+  /* 인라인블록-인라인 레벨이였다가 화면이 작아지면 작아짐 */
+  /* 디스플레이 플렉스는 나를 감싸고있는 부모한테 */
+  width: 200px;
+  height: 100px;
+  border: 10px solid #f17070;
+  box-sizing: border-box;
+  border-top-style: dotted;
+}
+/* 보더박스-라인은 무조건 인사이드부터 패딩 적용*/
+/* 디드박스에 위스랑 헤이트 값 적용하려먼 박스사이징 보더박스로 */
+/* 박스사이징 안 적어주면 기본 콘텐츠박스 */
+
+.margin1 {
+  margin: 50px;
+  padding: 20px 30px 40px 50px;
+  box-shadow: 10px -10px 5px 5px;
+  border-radius: 50px/30px;
+}
+
+.margin2 {
+  margin: 30px 50px;
+  padding: 20px 30px;
+  /* 패딩 2번 적으면 상-하적용, 좌-우적용 */
+  box-shadow: 5px 10px 15px 5px rgb(192, 249, 161);
+  border-top-left-radius: 50px 30px;
+}
+
+.margin3 {
+  margin: 30px 20px 50px;
+  padding: 30px 20px 50px;
+  box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.5);
+}
+.margin4 {
+  margin: 30px 50px 30px 50px;
+  padding: 20px;
+  border-style: dotted;
+  /* border-width: thick thin; */
+  border-width: 2px 8px 10px 20px;
+  border-color: blue red greenyellow;
+}
+.margin5 {
+  margin-right: 20px;
+  border-radius: 20px;
+  border-top-left-radius: 50px;
+}

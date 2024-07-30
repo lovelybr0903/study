@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>조건문</title>
+    <style>
+      table,
+      td {
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>자리 배치도</h1>
+    <script>
+      //   const firtstNum = prompt("30미만 숫자 입력");
+      //   const secondNum = prompt("30미만 숫자 입력");
+      //   if (firstNum < 30 && secondNum < 30) {
+      //     document.write("두 개의 숫자 모두 30미만");
+      //   } else {
+      //     document.write("조건에 안 맞다.");
+      //   }
+      //   const num = prompt("30미만 숫자 입력");
+      //     if (num !== null) {
+      //       if (num < 30) {
+      //         document.write("30 오케이");
+      //       } else {
+      //         document.write("30 놉");
+      //       } else {
+      //         document.write("입력 취소");
+      //     }}
+      //   if (num !== null) {
+      //     num > 30 ? document.write("거짓") : document.write("참");
+      //   } else {
+      //     document.write("입력 취소");
+      //   }
+      //   3항 연산자
+      //   2중 for 문
+      let i, j;
+      const memNum = prompt("입장객은 몇명?");
+      const colNum = prompt("한 줄에 몇명 앉는데?");
+
+      if (memNum % colNum === 0) {
+        rowNum = parseInt(memNum / colNum);
+      } else {
+        rowNum = parseInt(memNum / colNum) + 1;
+      }
+
+      document.write("<table>");
+      for (i = 0; i < rowNum; i++) {
+        document.write("<tr>");
+        for (j = 1; j <= colNum; j++) {
+          seatNo = i * colNum + j;
+          if (seatNo > memNum) break;
+          document.write(`<td> 좌석 ${seatNo} </td>`);
+        }
+        document.write("</tr>");
+      }
+      document.write("</table>");
+    </script>
+  </body>
+</html>
